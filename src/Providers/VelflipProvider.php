@@ -12,7 +12,31 @@
 
 namespace Endru\Velflip\Providers;
 
-class VelflipProvider
+use Illuminate\Support\ServiceProvider;
+
+class VelflipProvider extends ServiceProvider
 {
-    
+    public function boot()
+    {
+        // Config
+        $this->publishes([
+            __DIR__ . '/../../config/velflip.php' => config_path('velflip.php')
+        ]);
+
+        // Route
+        $this->loadRoutesFrom(
+            __DIR__ . '/../../routes/velflip.php'
+        );
+
+        // View
+        $this->loadViewsFrom(
+            __DIR__ . '/../../resources/views', 'velflip'
+        );
+
+    }
+
+    public function register()
+    {
+        //
+    }
 }
