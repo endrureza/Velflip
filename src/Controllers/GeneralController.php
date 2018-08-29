@@ -10,9 +10,9 @@
  * @see https://github.com/endrureza/velflip
  */
 
-namespace Endru\Velflip;
+namespace Endru\Velflip\Controllers;
 
-class Velflip
+class GeneralController 
 {
-    
+
 }
